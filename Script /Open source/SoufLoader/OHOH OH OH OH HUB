@@ -1,0 +1,166 @@
+-- Library
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+
+
+
+
+--main
+local Window = Rayfield:CreateWindow({
+    Name = "Nextl00",
+    LoadingTitle = "We are loading the BEST slap battle HUB",
+    LoadingSubtitle = "by Souf game",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "Big Hub"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Key",
+       Subtitle = "Key System",
+       Note = "https://discord.gg/E67m5gJv2m",
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"hi"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+ })
+
+
+
+
+
+
+
+
+
+--Home
+ local Tab = Window:CreateTab("Home", 4483362458) -- Title, Image
+ 
+ 
+ local Section = Tab:CreateSection("Home",false) -- The 2nd argument is to tell if its only a Title and doesnt contain element
+
+
+ local Button = Tab:CreateButton({
+    Name = "Rejoin The Game",
+    Callback = function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+    end,
+ })
+ 
+ local Button = Tab:CreateButton({
+    Name = "Load Infinite Yield",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()  
+    end,
+ })
+  
+ 
+ 
+local Input = Tab:CreateInput({
+   Name = "Rojo Spam",
+   PlaceholderText = "Username",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+      if Value == "Me" or Value == "me" or Value == "Username" or Value == "" then
+         Person = game.Players.LocalPlayer.Name
+         else
+         Person = Value
+         end
+            end	  
+         
+   end,
+})
+  
+ local Button = Tab:CreateButton({
+    Name = "Destroy GUI",
+    Callback = function()
+        Rayfield:Destroy()  
+    end,
+ })
+
+--Antis
+ local Tab = Window:CreateTab("Antis", 4483362458) -- Title, Image
+ 
+
+
+
+--Misc
+ local Tab = Window:CreateTab("Misc", 4483362458) -- Title, Image
+ 
+    local Button = Tab:CreateButton({
+        Name = "Testing Server Freecam (PC)",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/SB%20Freecam"))()  
+        end,
+     })
+
+     local Button = Tab:CreateButton({
+        Name = "Testing Server Freecam (Mobile)",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/SB%20Freecam"))()  
+        end,
+     })
+
+     local Button = Tab:CreateButton({
+        Name = "Slap farm (script copied to clipboard)",
+        Callback = function()
+            setclipboard("loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Farm'))()")
+        end,
+     })
+     local Button = Tab:CreateButton({
+      Name = "Kill Aura",
+      Callback = function()
+         function isSpawned(player)
+            if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+                return true
+            else
+                return false
+            end
+         end
+         
+         while wait() do
+            for i, v in pairs(game.Players:GetPlayers()) do
+                if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+                    if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 50 then
+                        game:GetService("ReplicatedStorage").b:FireServer(v.Character["Right Arm"])
+                        wait(0.1)
+                    end
+                end
+            end
+         end
+      end,
+   })
+
+
+ 
+--Badge
+ local Tab = Window:CreateTab("Badge", 4483362458) -- Title, Image
+
+
+
+
+
+--Player
+ local Tab = Window:CreateTab("Player", 4483362458) -- Title, Image
+ 
+
+
+--Other Hub
+ local Tab = Window:CreateTab("Hubs", 4483362458) -- Title, Image
+
+ local Button = Tab:CreateButton({
+    Name = "Dizzy Hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/dizyhvh/rbx_scripts/main/dizzy_hub/scripts/slap_battles.lua"))()
+    end,
+ })
+
+
+
